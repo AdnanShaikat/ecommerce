@@ -2,33 +2,7 @@
   <div class="bg-gray-100 pl-4">
     <p class="text-3xl mt-4">Dashboard</p>
     <div class="flex py-5">
-      <div class="card flex-auto bg-green-400 text-white p-4 rounded-xl">
-        <p class="text-xs">Balance</p>
-        <p class="text-lg mt-2">$4811,21</p>
-        <p class="text-xm text-green-100 mt-10">valid till</p>
-        <p class="font-bold text-xm">3/21</p>
-      </div>
-
-      <div class="card flex-auto bg-green-400 text-white p-4 rounded-xl ml-2">
-        <p class="text-xs">Balance</p>
-        <p class="text-lg mt-2">$4811,21</p>
-        <p class="text-xm text-green-100 mt-10">valid till</p>
-        <p class="font-bold text-xm">3/21</p>
-      </div>
-
-      <div class="card flex-auto bg-green-400 text-white p-4 rounded-xl ml-2">
-        <p class="text-xs">Balance</p>
-        <p class="text-lg mt-2">$4811,21</p>
-        <p class="text-xm text-green-100 mt-10">valid till</p>
-        <p class="font-bold text-xm">3/21</p>
-      </div>
-
-      <div class="card flex-auto bg-green-400 text-white p-4 rounded-xl ml-2">
-        <p class="text-xs">Balance</p>
-        <p class="text-lg mt-2">$4811,21</p>
-        <p class="text-xm text-green-100 mt-10">valid till</p>
-        <p class="font-bold text-xm">3/21</p>
-      </div>
+      <statment-cards />
     </div>
     <!-- Transaction -->
     <div class="flex py-5">
@@ -244,10 +218,12 @@
 </template>
 
 <script>
+import StatmentCards from "~/components/StatmentCards.vue";
 export default {
   layout: "admin",
 };
 </script>
 
+    StatmentCards
 <style>
 </style>

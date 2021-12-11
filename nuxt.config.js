@@ -18,7 +18,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-   
+  //  '@/assets/scss/app.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -29,7 +29,7 @@ export default {
   components: [
      '~/components',
     { path: '~/components/shared', extensions: ['vue'] },
-    { path: '~/components/form', extensions: ['vue'] },
+    // { path: '~/components/form', extensions: ['vue'] },
     { path: '~/components/icons', extensions: ['vue'] },
   ],
 
