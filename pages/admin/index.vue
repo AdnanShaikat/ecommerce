@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-gray-100 pl-4">
+  <div class="bg-gray-100 p-4">
     <p class="text-3xl mt-4">Dashboard</p>
-    <div class="flex py-5">
+    <div class="py-5">
       <statment-cards />
     </div>
     <!-- Transaction -->
-    <div class="flex py-5">
-      <div class="w-1/2 p-4 bg-white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
+      <div class="bg-white p-4">
         <div class="flex">
           <p class="font-bold">Transaction Overview</p>
           <dots class="ml-auto text-gray-400"></dots>
@@ -45,38 +45,10 @@
         </div>
       </div>
 
-      <div class="w-1/2 bg-white ml-4 p-4">
-        <p class="font-bold ml-4 mb-4">Spending</p>
-        <div class="flex">
-          <div class="card flex-1 bg-green-400 text-white p-4 rounded-xl ml-4">
-            <p class="text-xs">Balance</p>
-            <p class="text-lg mt-2">$4811,21</p>
-            <p class="text-xm text-green-100 mt-10">valid till</p>
-            <p class="font-bold text-xm">3/21</p>
-          </div>
-
-          <div class="card flex-1 bg-green-400 text-white p-4 rounded-xl ml-4">
-            <p class="text-xs">Balance</p>
-            <p class="text-lg mt-2">$4811,21</p>
-            <p class="text-xm text-green-100 mt-10">valid till</p>
-            <p class="font-bold text-xm">3/21</p>
-          </div>
-        </div>
-
-        <div class="flex mt-4">
-          <div class="card flex-1 bg-green-400 text-white p-4 rounded-xl ml-4">
-            <p class="text-xs">Balance</p>
-            <p class="text-lg mt-2">$4811,21</p>
-            <p class="text-xm text-green-100 mt-10">valid till</p>
-            <p class="font-bold text-xm">3/21</p>
-          </div>
-
-          <div class="card flex-1 bg-green-400 text-white p-4 rounded-xl ml-4">
-            <p class="text-xs">Balance</p>
-            <p class="text-lg mt-2">$4811,21</p>
-            <p class="text-xm text-green-100 mt-10">valid till</p>
-            <p class="font-bold text-xm">3/21</p>
-          </div>
+      <div class="bg-white p-4">
+        <p class="font-bold mb-4">Spending</p>
+        <div class="">
+          <spending-cards />
         </div>
       </div>
     </div>
@@ -84,8 +56,8 @@
 
     <!-- Latest Invoice -->
 
-    <div class="flex py-5">
-      <div class="w-1/2 p-4 bg-white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
+      <div class="p-4 bg-white">
         <div class="flex mb-5">
           <p class="font-bold">Latest Invoice</p>
           <dots class="ml-auto text-gray-400"></dots>
@@ -161,7 +133,7 @@
         </div>
       </div>
 
-      <div class="w-1/2 p-4 ml-4 bg-white">
+      <div class="p-4 bg-white">
         <div class="flex mb-5">
           <p class="font-bold">Latest Invoice</p>
           <dots class="ml-auto text-gray-400"></dots>
@@ -218,8 +190,10 @@
 </template>
 
 <script>
+import SpendingCard from "~/components/SpendingCards.vue";
 import StatmentCards from "~/components/StatmentCards.vue";
 export default {
+  components: { SpendingCard },
   layout: "admin",
 };
 </script>

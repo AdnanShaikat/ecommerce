@@ -1,10 +1,12 @@
 <template>
-  <div class="grid grid-cols-2 lg:grid-cols-4 grid-rows-2 lg:grid-rows-1 gap-4">
-    <div class="card bg-green-400 text-white p-4 rounded-xl" v-for="(statmentCard, i) in statmentCards" :key="i">
-      <p class="text-xs">{{ statmentCard.name }}</p>
-      <p class="text-lg mt-2">{{ statmentCard.amount }}</p>
-      <p class="text-xm text-green-100 mt-10">{{ statmentCard.valid }}</p>
-      <p class="font-bold text-xm">{{ statmentCard.date }}</p>
+  <div>
+    <div class="grid grid-cols-2 grid-rows-2 gap-4">
+      <div class="card bg-green-400 text-white p-4 rounded-xl" v-for="(spendingCard, i) in spendingCards" :key="i">
+        <p class="text-xs">{{ spendingCard.name }}</p>
+        <p class="text-lg mt-2">{{ spendingCard.amount }}</p>
+        <p class="text-xm text-green-100 mt-10">{{ spendingCard.valid }}</p>
+        <p class="font-bold text-xm">{{ spendingCard.date }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -13,7 +15,7 @@
 export default {
   data() {
     return {
-      statmentCards: [
+      spendingCards: [
         {
           name: "Balance",
           amount: "45000",
@@ -22,19 +24,19 @@ export default {
         },
         {
           name: "Balance",
-          amount: "44000",
+          amount: "45000",
           valid: "valid till",
           date: "3/21",
         },
         {
           name: "Balance",
-          amount: "47000",
+          amount: "45000",
           valid: "valid till",
           date: "3/21",
         },
         {
           name: "Balance",
-          amount: "46000",
+          amount: "45000",
           valid: "valid till",
           date: "3/21",
         },
