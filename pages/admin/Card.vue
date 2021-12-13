@@ -13,19 +13,21 @@
           <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
           <thead>
             <tr>
-              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">City</th>
-              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">Name</th>
-              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">Actions</th>
+              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">product</th>
+              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">product type</th>
+              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">customer</th>
+              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">customer number</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="">
-              <td class="py-4 px-6 border-b border-grey-light">New York</td>
-              <td class="py-4 px-6 border-b border-grey-light">USA</td>
+            <tr class="" v-for="(cardListItem, i) in cardList" :key="i">
+              <td class="py-4 px-6 border-b border-grey-light"><img src="/images/foods/food-1.jpg" class="h-20 w-full" alt=""></td>
+              <td class="py-4 px-6 border-b border-grey-light">{{ cardListItem.productType }}</td>
+              <td class="py-4 px-6 border-b border-grey-light">{{ cardListItem.customerName}}</td>
+              <td class="py-4 px-6 border-b border-grey-light">{{ cardListItem.customerNumber}}</td>
 
               <td class="py-4 px-6 border-b border-grey-light">
-                <a href="#" class="text-gray-500 font-bold py-1 px-3 rounded text-xs bg-green-500 hover:bg-green-200">Edit</a>
-                <a href="#" class="text-gray-500 font-bold py-1 px-3 rounded text-xs bg-blue-500 hover:bg-blue-200">View</a>
+                <dots />
               </td>
             </tr>
           </tbody>
@@ -63,13 +65,42 @@
 </template>
 
 <script>
+import Dots from "~/components/icons/Dots.vue";
 import StatmentCards from "~/components/StatmentCards.vue";
 export default {
-  components: { StatmentCards },
+  components: { StatmentCards, Dots },
   layout: "admin",
   data() {
     return {
-      cardList: [{}],
+      cardList: [
+        {
+          imgUrl: "/images/foods/food-1.jpg",
+          productType: "Vagetable",
+          customerName: "Adnan Shaikat",
+          customerNumber: "01627125430",
+        },
+
+        {
+          imgUrl: "/images/foods/food-2.jpg",
+          productType: "Vagetable",
+          customerName: "Adnan Shaikat",
+          customerNumber: "01627125430",
+        },
+
+        {
+          imgUrl: "/images/foods/food-3.jpg",
+          productType: "Vagetable",
+          customerName: "Adnan Shaikat",
+          customerNumber: "01627125430",
+        },
+
+        {
+          imgUrl: "/images/foods/food-4.jpg",
+          productType: "Vagetable",
+          customerName: "Adnan Shaikat",
+          customerNumber: "01627125430",
+        },
+      ],
     };
   },
 };

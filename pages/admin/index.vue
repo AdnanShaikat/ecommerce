@@ -201,3 +201,6 @@ export default {
     StatmentCards
 <style>
 </style>
+
+
+// <a href="#" class="text-gray-500 font-bold py-1 px-3 rounded text-xs bg-green-500 hover:bg-green-200">Edit</a>

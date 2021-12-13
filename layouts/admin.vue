@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen">
     <div class="w-60 p-4 bg-white">
-      <nuxt-link to="/">
+      <nuxt-link to="/admin">
         <div class="flex items-center">
           <logo class="w-10 h-10">
           </logo>
@@ -9,14 +9,16 @@
         </div>
       </nuxt-link>
 
-      <div class="mt-10">
-        <div class="flex">
-          <div>
-            <dashboard class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></dashboard>
+      <nuxt-link to="/admin">
+        <div class="mt-10">
+          <div class="flex">
+            <div>
+              <dashboard class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></dashboard>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Dashboard</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Dashboard</p>
         </div>
-      </div>
+      </nuxt-link>
 
       <div class="mt-6">
         <div class="flex">
