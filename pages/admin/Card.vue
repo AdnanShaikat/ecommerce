@@ -17,11 +17,12 @@
               <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">product type</th>
               <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">customer</th>
               <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">customer number</th>
+              <th class="py-4 px-6  font-bold uppercase text-sm text-gray-500 border-b border-gray-500">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr class="" v-for="(cardListItem, i) in cardList" :key="i">
-              <td class="py-4 px-6 border-b border-grey-light"><img src="/images/foods/food-1.jpg" class="h-20 w-full" alt=""></td>
+              <td class="py-4 px-6 border-b border-grey-light"><img :src="cardListItem.imgUrl" class="h-20 w-full" alt=""></td>
               <td class="py-4 px-6 border-b border-grey-light">{{ cardListItem.productType }}</td>
               <td class="py-4 px-6 border-b border-grey-light">{{ cardListItem.customerName}}</td>
               <td class="py-4 px-6 border-b border-grey-light">{{ cardListItem.customerNumber}}</td>
@@ -83,21 +84,21 @@ export default {
         {
           imgUrl: "/images/foods/food-2.jpg",
           productType: "Vagetable",
-          customerName: "Adnan Shaikat",
+          customerName: "Tanvir Hasan",
           customerNumber: "01627125430",
         },
 
         {
           imgUrl: "/images/foods/food-3.jpg",
           productType: "Vagetable",
-          customerName: "Adnan Shaikat",
+          customerName: "Motsim Fuad",
           customerNumber: "01627125430",
         },
 
         {
           imgUrl: "/images/foods/food-4.jpg",
-          productType: "Vagetable",
-          customerName: "Adnan Shaikat",
+          productType: "Pizza",
+          customerName: "Ahmed Shakil",
           customerNumber: "01627125430",
         },
       ],

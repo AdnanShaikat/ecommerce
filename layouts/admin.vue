@@ -20,59 +20,71 @@
         </div>
       </nuxt-link>
 
-      <div class="mt-6">
-        <div class="flex">
-          <div>
-            <wallet class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></wallet>
+      <nuxt-link to="/admin/wallet">
+        <div class="mt-6">
+          <div class="flex">
+            <div>
+              <wallet class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></wallet>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Wallet</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Wallet</p>
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="mt-6">
-        <div class="flex">
-          <div>
-            <invoice class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></invoice>
+      <nuxt-link to="/admin/invoice">
+        <div class="mt-6">
+          <div class="flex">
+            <div>
+              <invoice class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></invoice>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Invoice</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Invoice</p>
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="mt-6">
-        <div class="flex">
-          <div>
-            <createinvoice class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></createinvoice>
+      <nuxt-link to="/admin/createinvoice">
+        <div class="mt-6">
+          <div class="flex">
+            <div>
+              <createinvoice class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></createinvoice>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Create Invoice</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Create Invoice</p>
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="mt-6">
-        <div class="flex">
-          <div>
-            <card class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></card>
+      <nuxt-link to="/admin/card">
+        <div class="mt-6">
+          <div class="flex">
+            <div>
+              <card class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></card>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Card</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Card</p>
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="mt-6">
-        <div class="flex">
-          <div>
-            <transaction class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></transaction>
+      <nuxt-link to="/admin/transaction">
+        <div class="mt-6">
+          <div class="flex">
+            <div>
+              <transaction class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></transaction>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Transaction</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Transaction</p>
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="mt-6">
-        <div class="flex">
-          <div>
-            <clients class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></clients>
+      <nuxt-link to="/admin/client">
+        <div class="mt-6">
+          <div class="flex">
+            <div>
+              <clients class="w-4 h-4 text-gray-400 hover:text-green-400 cursor-pointer"></clients>
+            </div>
+            <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Clients</p>
           </div>
-          <p class="ml-4 text-gray-400 hover:text-green-400 cursor-pointer">Clients</p>
         </div>
-      </div>
+      </nuxt-link>
     </div>
 
     <div class="flex-grow bg-gray-100">

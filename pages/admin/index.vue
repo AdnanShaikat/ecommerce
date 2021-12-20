@@ -57,85 +57,50 @@
     <!-- Latest Invoice -->
 
     <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
+
       <div class="p-4 bg-white">
         <div class="flex mb-5">
           <p class="font-bold">Latest Invoice</p>
           <dots class="ml-auto text-gray-400"></dots>
         </div>
-        <div class="flex">
-          <form action="/action_page.php" class="flex-auto">
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1" class="text-sm"> Invoice</label><br>
-          </form>
-          <p class="flex-auto text-sm">recepient</p>
-          <p class="flex-auto text-sm">date</p>
-          <p class="flex-auto text-sm">status</p>
-        </div>
 
-        <div class="flex mt-5">
-          <form action="/action_page.php" class="flex-auto">
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1" class="text-sm">INV-001-123</label><br>
-          </form>
-          <p class="flex-auto text-sm">Rob B.</p>
-          <p class="flex-auto text-sm">Mon 10, 2021</p>
-          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 ml-10 border border-blue-500 hover:border-transparent rounded text-sm flex-auto">
-            Paid
-          </button>
-        </div>
+        <table class="text-left w-full border-collapse">
+          <thead>
+            <tr class="border-b border-gray-400 p-0">
+              <th class="text-sm">
+                <label class="inline-flex items-center">
+                  <input type="checkbox" class="form-checkbox h-3 w-3"><span class="ml-2">ID Invoice</span>
+                </label>
+              </th>
+              <th class="text-sm">Recepiant</th>
+              <th class="text-sm">Date</th>
+              <th class="text-sm">Status</th>
+            </tr>
+          </thead>
 
-        <div class="flex mt-5">
-          <form action="/action_page.php" class="flex-auto">
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1" class="text-sm">INV-001-123</label><br>
-          </form>
-          <p class="flex-auto text-sm">Rob B.</p>
-          <p class="flex-auto text-sm">Mon 10, 2021</p>
-          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 ml-10 border border-blue-500 hover:border-transparent rounded text-sm flex-auto">
-            Paid
-          </button>
-        </div>
-
-        <div class="flex mt-5">
-          <form action="/action_page.php" class="flex-auto">
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1" class="text-sm">INV-001-123</label><br>
-          </form>
-          <p class="flex-auto text-sm">Rob B.</p>
-          <p class="flex-auto text-sm">Mon 10, 2021</p>
-          <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-2 ml-10 border border-red-500 hover:border-transparent rounded text-sm flex-auto">
-            Unpaid
-          </button>
-        </div>
-
-        <div class="flex mt-5">
-          <form action="/action_page.php" class="flex-auto">
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1" class="text-sm">INV-001-123</label><br>
-          </form>
-          <p class="flex-auto text-sm">Rob B.</p>
-          <p class="flex-auto text-sm">Mon 10, 2021</p>
-          <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-2 ml-10 border border-red-500 hover:border-transparent rounded text-sm flex-auto">
-            Unpaid
-          </button>
-        </div>
-
-        <div class="flex mt-5">
-          <form action="/action_page.php" class="flex-auto">
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1" class="text-sm">INV-001-123</label><br>
-          </form>
-          <p class="flex-auto text-sm">Rob B.</p>
-          <p class="flex-auto text-sm">Mon 10, 2021</p>
-          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 ml-10 border border-blue-500 hover:border-transparent rounded text-sm flex-auto">
-            Paid
-          </button>
-        </div>
+          <tbody>
+            <tr class="text-sm" v-for="(invoice, i) in invoices" :key="i">
+              <td class="py-1">
+                <label class=" items-center">
+                  <input type="checkbox" class="form-checkbox h-3 w-3"><span class="ml-2 text-gray-500">{{ invoice.id }}</span>
+                </label>
+              </td>
+              <td class="py-1">{{ invoice.rescepiant }}</td>
+              <td class="py-1">{{ invoice.date }}</td>
+              <td class="py-1">
+                <button class="rounded py-2 px-4 text-white" :class="{'bg-blue-500 ':invoice.status=='Paid' , 'bg-red-500' :invoice.status=='Unpaid'}">
+                  {{ invoice.status }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
+      <!-- Prviius Transaction -->
       <div class="p-4 bg-white">
         <div class="flex mb-5">
-          <p class="font-bold">Latest Invoice</p>
+          <p class="font-bold">Prviius Transaction</p>
           <dots class="ml-auto text-gray-400"></dots>
         </div>
         <div class="flex items-center">
@@ -143,44 +108,27 @@
           <chevron class="text-gray-400 ml-1"></chevron>
         </div>
 
-        <div class="flex items-center pb-5">
-          <div class="bg-green-500 text-white rounded p-1 mr-4">
-            <share class="flex-auto rounded"></share>
-          </div>
-          <p class="flex-auto">Netflix Subscription</p>
-          <p class="flex-auto text-gray-400">March 2,2021</p>
-          <p class="flex-auto font-bold">+$45</p>
-          <button class="flex-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Complate
-          </button>
-        </div>
-        <hr>
+        <table class="text-left w-full border-collapse">
+          <thead>
 
-        <div class="flex items-center mt-5 pb-5">
-          <div class="bg-green-500 text-white rounded p-1 mr-4">
-            <share class="flex-auto rounded"></share>
-          </div>
-          <p class="flex-auto">Netflix Subscription</p>
-          <p class="flex-auto text-gray-400">March 2,2021</p>
-          <p class="flex-auto font-bold">+$45</p>
-          <button class="flex-auto bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-            Canceled
-          </button>
-        </div>
-        <hr>
+          </thead>
 
-        <div class="flex items-center mt-5 pb-5">
-          <div class="bg-green-500 text-white rounded p-1 mr-4">
-            <share class="flex-auto rounded"></share>
-          </div>
-          <p class="flex-auto">Netflix Subscription</p>
-          <p class="flex-auto text-gray-400">March 2,2021</p>
-          <p class="flex-auto font-bold">+$45</p>
-          <button class="flex-auto bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-            Complate
-          </button>
-        </div>
-        <hr>
+          <tbody>
+            <tr class="border-b border-gray-400 text-sm mt-4" v-for="(transaction, i) in transactions" :key="i">
+              <td class="py-2">
+                <img :src="transaction.imgUrl" class="h-14 w-14" alt="">
+              </td>
+              <td class="py-2">{{ transaction.subcribtion }}</td>
+              <td class="py-2">{{ transaction.date }}</td>
+              <td class="py-2">{{ transaction.doller }}</td>
+              <td class="py-2">
+                <button class="rounded py-2 px-4 text-white" :class="{'bg-blue-500 ':transaction.status=='Complate' , 'bg-red-500' :transaction.status=='Incomplate'}">
+                  {{ transaction.status }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
       </div>
     </div>
@@ -195,12 +143,79 @@ import StatmentCards from "~/components/StatmentCards.vue";
 export default {
   components: { SpendingCard },
   layout: "admin",
+  data() {
+    return {
+      invoices: [
+        {
+          id: "Id Invoice",
+          rescepiant: "Adnan B",
+          date: "21 may 2021",
+          status: "Paid",
+        },
+
+        {
+          id: "Id Invoice",
+          rescepiant: "Adnan B",
+          date: "21 may 2021",
+          status: "Paid",
+        },
+
+        {
+          id: "Id Invoice",
+          rescepiant: "Adnan B",
+          date: "18 july 2021",
+          status: "Unpaid",
+        },
+
+        {
+          id: "Id Invoice",
+          rescepiant: "Adnan B",
+          date: "10 dec 2021",
+          status: "Unpaid",
+        },
+
+        {
+          id: "Id Invoice",
+          rescepiant: "Adnan B",
+          date: "28 feb 2021",
+          status: "Paid",
+        },
+      ],
+
+      transactions: [
+        {
+          imgUrl: "/images/foods/food-1.jpg",
+          subcribtion: "Netfelx Subcription",
+          date: "12 may 2020",
+          doller: "+$45",
+          status: "Complate",
+        },
+
+        {
+          imgUrl: "/images/foods/food-2.jpg",
+          subcribtion: "Netfelx Subcription",
+          date: "12 may 2020",
+          doller: "+$45",
+          status: "Complate",
+        },
+
+        {
+          imgUrl: "/images/foods/food-3.jpg",
+          subcribtion: "Netfelx Subcription",
+          date: "12 may 2020",
+          doller: "+$45",
+          status: "Incomplate",
+        },
+      ],
+    };
+  },
 };
 </script>
-
-    StatmentCards
-<style>
+<style scoped>
+tbody:before {
+  content: "-";
+  display: block;
+  line-height: 0.5rem;
+  color: transparent;
+}
 </style>
-
-
-// <a href="#" class="text-gray-500 font-bold py-1 px-3 rounded text-xs bg-green-500 hover:bg-green-200">Edit</a>
