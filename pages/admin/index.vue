@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100 p-4">
-    <p class="text-3xl mt-4">Dashboard</p>
+    <p class="text-3xl mt-4 text-text-500">Dashboard</p>
     <div class="py-5">
       <statment-cards />
     </div>

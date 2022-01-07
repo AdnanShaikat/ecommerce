@@ -1,37 +1,37 @@
 <template>
   <div class="bg-gray-100 p-4">
-    <p class="text-3xl my-4">Client</p>
+    <p class="text-3xl text-text-500 my-4">Client</p>
 
-    <div class="grid grid-cols-3 grid-rows-2 gap-4">
+    <div class="grid grid-cols-2 grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-4">
       <div class="bg-white p-4" v-for="(client, i) in clients" :key="i">
         <div class="flex">
           <div>
             <img :src="client.imgUrl" class="h-20 w-20 rounded-full" alt="">
-            <p class="mt-1 text-lg font-bold">{{ client.Name}}</p>
-            <p class="text-gray-500 text-sm">{{ client.Company}}</p>
+            <p class="mt-1 text-lg text-text-500 font-bold">{{ client.Name}}</p>
+            <p class="text-secondary-500 text-sm">{{ client.Company}}</p>
           </div>
           <dots class="ml-auto" />
         </div>
 
         <div class="flex mt-3">
           <div>
-            <p class="text-gray-500 text-sm">{{ client.Contact}}</p>
+            <p class="text-secondary-500 text-sm">{{ client.Contact}}</p>
             <p class="flex mt-2">
-              <phone class="text-gray-500" />
-              <span class="ml-1 text-sm font-bold">{{ client.Number}}</span>
+              <phone class="text-secondary-500" />
+              <span class="ml-1 text-sm text-text-500 font-bold">{{ client.Number}}</span>
             </p>
 
             <p class="flex mt-2">
-              <envelope class="text-gray-500" />
-              <span class="ml-1 text-sm font-bold">{{ client.Mail}}</span>
+              <envelope class="text-secondary-500" />
+              <span class="ml-1 text-sm text-text-500 font-bold">{{ client.Mail}}</span>
             </p>
           </div>
 
           <div class="ml-auto">
-            <p class="text-gray-500 text-sm">{{ client.Payment}}</p>
+            <p class="text-secondary-500 text-sm">{{ client.Payment}}</p>
             <p class="flex mt-2">
-              <calender class="text-gray-500" />
-              <span class="ml-1 text-sm font-bold">{{ client.Date}}</span>
+              <calender class="text-secondary-500" />
+              <span class="ml-1 text-sm text-text-500 font-bold">{{ client.Date}}</span>
             </p>
           </div>
         </div>
