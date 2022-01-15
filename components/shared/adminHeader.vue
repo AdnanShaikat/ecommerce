@@ -1,17 +1,17 @@
 <template>
-  <div class="flex items-center p-4 fixed w-full top-0">
+  <div class="flex items-center p-4">
     <div class="w-2/3">
       <form class="example" action="/action_page.php">
-        <input class="p-3 w-full rounded-full py-3 px-6" type="text" placeholder="Search.." name="search">
+        <input class="p-3 w-full rounded-full py-3 px-6 bg-gray-100" type="text" placeholder="Search.." name="search">
       </form>
     </div>
-    <div class="bg-white ml-10 rounded-full h-8 w-8 flex justify-center items-center">
+    <div class="bg-gray-100 ml-10 rounded-full h-8 w-8 flex justify-center items-center">
       <notification></notification>
     </div>
-    <div class="bg-white ml-4 rounded-full h-8 w-8 flex justify-center items-center">
+    <div class="bg-gray-100 ml-4 rounded-full h-8 w-8 flex justify-center items-center">
       <envelope></envelope>
     </div>
-    <div class="bg-white ml-4 rounded-full h-8 w-8 flex justify-center items-center">
+    <div class="bg-gray-100 ml-4 rounded-full h-8 w-8 flex justify-center items-center">
       <setting></setting>
     </div>
     <div class="ml-4 flex-grow rounded-full h-8 w-8 flex justify-center items-center">

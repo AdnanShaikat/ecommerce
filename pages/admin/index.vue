@@ -4,25 +4,20 @@
     <div class="py-5">
       <statment-cards />
     </div>
-    <!-- Transaction -->
+    <!-- Customar Map -->
     <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
       <div class="bg-white p-4">
         <div class="flex">
-          <p class="font-bold">Transaction Overview</p>
-          <dots class="ml-auto text-gray-400"></dots>
-        </div>
-        <div class="flex items-center mt-4">
-          <p class="text-xs text-gray-400">This Week</p>
-          <chevron class="text-gray-400 ml-1"></chevron>
-          <div class="flex ml-auto items-center">
-            <div class="bg-green-500 rounded h-2 w-2">
-            </div>
-            <p class="ml-2 mr-4 text-xs text-gray-400">income</p>
-            <div class="bg-green-500 rounded h-2 w-2 ml-2">
-            </div>
-            <p class="ml-2 text-xs text-gray-400">outcome</p>
+          <div>
+            <p class="font-bold">Customer Map</p>
+            <p>Lorem Ipsum</p>
+          </div>
+          <div class="flex items-center border px-4 ml-auto">
+            <p class="text-xs text-gray-400">This Week</p>
+            <chevron class="text-gray-400"></chevron>
           </div>
         </div>
+
         <div class="flex items-center mt-4">
           <p class="text-gray-400">2000</p>
           <p class="ml-4 text-gray-400">.......................................</p>
@@ -54,43 +49,43 @@
     </div>
     <!-- End Transaction -->
 
-    <!-- Latest Invoice -->
+    <!-- Recent Order -->
 
     <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
 
-      <div class="p-4 bg-white">
-        <div class="flex mb-5">
-          <p class="font-bold">Latest Invoice</p>
-          <dots class="ml-auto text-gray-400"></dots>
+      <div class="p-4 mb-5">
+        <div class="flex">
+          <div>
+            <p class="font-bold">Recent Order Request</p>
+            <p>Lorem Ipsum</p>
+          </div>
+          <div class="flex items-center border px-2 ml-auto">
+            <p class="text-xs text-gray-400">This Week</p>
+            <chevron class="text-gray-400"></chevron>
+          </div>
         </div>
 
         <table class="text-left w-full border-collapse">
           <thead>
-            <tr class="border-b border-gray-400 p-0">
-              <th class="text-sm">
-                <label class="inline-flex items-center">
-                  <input type="checkbox" class="form-checkbox h-3 w-3"><span class="ml-2">ID Invoice</span>
-                </label>
-              </th>
-              <th class="text-sm">Recepiant</th>
-              <th class="text-sm">Date</th>
-              <th class="text-sm">Status</th>
-            </tr>
+
           </thead>
 
           <tbody>
-            <tr class="text-sm" v-for="(invoice, i) in invoices" :key="i">
+            <tr class="text-sm" v-for="(orderRequest, i) in orderRequests" :key="i">
               <td class="py-1">
-                <label class=" items-center">
-                  <input type="checkbox" class="form-checkbox h-3 w-3"><span class="ml-2 text-gray-500">{{ invoice.id }}</span>
-                </label>
+                <img :src="orderRequest.imgUrl" class="h-14 w-14" alt="">
               </td>
-              <td class="py-1">{{ invoice.rescepiant }}</td>
-              <td class="py-1">{{ invoice.date }}</td>
+              <td class="py-1">{{ orderRequest.foodName }} {{ orderRequest.customarId }}</td>
+              <td class="py-1">{{ orderRequest.customarName }}</td>
+              <td class="py-1">{{ orderRequest.price }}</td>
+              <td class="py-1">{{ orderRequest.quantity }}</td>
               <td class="py-1">
-                <button class="rounded py-2 px-4 text-white" :class="{'bg-blue-500 ':invoice.status=='Paid' , 'bg-red-500' :invoice.status=='Unpaid'}">
-                  {{ invoice.status }}
+                <button class="rounded py-2 px-4 text-white" :class="{'bg-blue-500 ':orderRequest.status=='Paid' , 'bg-red-500' :orderRequest.status=='Unpaid'}">
+                  {{ orderRequest.status }}
                 </button>
+              </td>
+              <td class="py-1">
+                <dots />
               </td>
             </tr>
           </tbody>
@@ -138,47 +133,59 @@
 </template>
 
 <script>
+import Dots from "~/components/icons/Dots.vue";
 import SpendingCard from "~/components/SpendingCards.vue";
 import StatmentCards from "~/components/StatmentCards.vue";
 export default {
-  components: { SpendingCard },
+  components: { SpendingCard, Dots },
   layout: "admin",
   data() {
     return {
-      invoices: [
+      orderRequests: [
         {
-          id: "Id Invoice",
-          rescepiant: "Adnan B",
-          date: "21 may 2021",
-          status: "Paid",
+          imgUrl: "/images/foods/food-1.jpg",
+          foodName: "Family Pizza",
+          customarName: "Ahemed Asif",
+          customarId: "#0010235",
+          price: "$7.5",
+          quantity: "x 3",
+          status: "Pending",
         },
-
         {
-          id: "Id Invoice",
-          rescepiant: "Adnan B",
-          date: "21 may 2021",
-          status: "Paid",
+          imgUrl: "/images/foods/food-2.jpg",
+          foodName: "Family Pizza",
+          customarName: "Ahmed Shakil",
+          customarId: "#0010235",
+          price: "$7.5",
+          quantity: "x 3",
+          status: "Pending",
         },
-
         {
-          id: "Id Invoice",
-          rescepiant: "Adnan B",
-          date: "18 july 2021",
-          status: "Unpaid",
+          imgUrl: "/images/foods/food-3.jpg",
+          foodName: "Family Pizza",
+          customarName: "Tanvir Hasan",
+          customarId: "#0010235",
+          price: "$7.5",
+          quantity: "x 3",
+          status: "Pending",
         },
-
         {
-          id: "Id Invoice",
-          rescepiant: "Adnan B",
-          date: "10 dec 2021",
-          status: "Unpaid",
+          imgUrl: "/images/foods/food-4.jpg",
+          foodName: "Family Pizza",
+          customarName: "Motasiam Fuad",
+          customarId: "#0010235",
+          price: "$7.5",
+          quantity: "x 3",
+          status: "Pending",
         },
-
         {
-          id: "Id Invoice",
-          rescepiant: "Adnan B",
-          date: "28 feb 2021",
-          status: "Paid",
+          imgUrl: "/images/foods/food-5.jpg",
+          foodName: "Family Pizza",
+          customarName: "Adnan Shaikat",
+          customarId: "#0010235",
+          price: "$7.5",
+          quantity: "x 3",
+          status: "Pending",
         },
       ],
 

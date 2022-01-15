@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen top">
-    <div class="w-60 p-4 bg-white">
+    <div class="w-60 p-4">
       <nuxt-link to="/admin">
         <div class="flex items-center">
           <logo class="w-10 h-10">
@@ -21,9 +21,9 @@
       </nuxt-link>
     </div>
 
-    <div class="flex-grow bg-gray-100">
+    <div class="flex-grow">
       <adminHeader />
-      <div class="mt-16">
+      <div class="mt-10">
         <Nuxt></Nuxt>
       </div>
     </div>
