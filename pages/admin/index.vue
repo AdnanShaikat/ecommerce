@@ -53,16 +53,16 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
 
-      <div class="p-4 mb-5">
+      <div class="p-4 bg-white">
         <div class="flex">
           <div>
             <p class="font-bold">Recent Order Request</p>
             <p>Lorem Ipsum</p>
           </div>
-          <div class="flex items-center border px-2 ml-auto">
-            <p class="text-xs text-gray-400">This Week</p>
+          <button class="flex items-center rounded-full border py-1 px-4 ml-auto">
+            <p class="text-xs text-gray-400">Newest</p>
             <chevron class="text-gray-400"></chevron>
-          </div>
+          </button>
         </div>
 
         <table class="text-left w-full border-collapse">
@@ -71,20 +71,20 @@
           </thead>
 
           <tbody>
-            <tr class="text-sm" v-for="(orderRequest, i) in orderRequests" :key="i">
-              <td class="py-1">
-                <img :src="orderRequest.imgUrl" class="h-14 w-14" alt="">
+            <tr class="border-b text-sm border-gray-400" v-for="(orderRequest, i) in orderRequests" :key="i">
+              <td class="py-2">
+                <img :src="orderRequest.imgUrl" class="h-14 w-14 rounded-full" alt="">
               </td>
-              <td class="py-1">{{ orderRequest.foodName }} {{ orderRequest.customarId }}</td>
-              <td class="py-1">{{ orderRequest.customarName }}</td>
-              <td class="py-1">{{ orderRequest.price }}</td>
-              <td class="py-1">{{ orderRequest.quantity }}</td>
-              <td class="py-1">
-                <button class="rounded py-2 px-4 text-white" :class="{'bg-blue-500 ':orderRequest.status=='Paid' , 'bg-red-500' :orderRequest.status=='Unpaid'}">
+              <td class="py-2">{{ orderRequest.foodName }}</td>
+              <td class="py-2">{{ orderRequest.customarName }}</td>
+              <td class="py-2">{{ orderRequest.price }}</td>
+              <td class="py-2">{{ orderRequest.quantity }}</td>
+              <td class="py-2">
+                <button class="rounded py-2 px-4" :class="{'bg-blue-200':orderRequest.status=='Delivered' , 'bg-red-200' :orderRequest.status=='Pending' , 'bg-gray-200' :orderRequest.status=='Complate' }">
                   {{ orderRequest.status }}
                 </button>
               </td>
-              <td class="py-1">
+              <td class="py-2">
                 <dots />
               </td>
             </tr>
@@ -94,36 +94,26 @@
 
       <!-- Prviius Transaction -->
       <div class="p-4 bg-white">
-        <div class="flex mb-5">
-          <p class="font-bold">Prviius Transaction</p>
-          <dots class="ml-auto text-gray-400"></dots>
+        <div class="mb-5">
+          <p class="font-bold">Recent Order Request</p>
+          <p>Lorem Ipsum</p>
         </div>
+
         <div class="flex items-center">
-          <p class="text-xs text-gray-400">This Week</p>
-          <chevron class="text-gray-400 ml-1"></chevron>
+          <div class="flex-1">
+            #1
+          </div>
+          <div class="flex flex-1 flex-col">
+            <p>Chicken curry special with cucumber</p>
+            <div class="flex">
+              <p>5.56</p>
+              <p class="text-text-500 ml-4">Order</p>
+            </div>
+          </div>
+          <div class="flex-1">
+            <img src="/images/foods/food-1.jpg" class="w-14 h-14 rounded-full" alt="">
+          </div>
         </div>
-
-        <table class="text-left w-full border-collapse">
-          <thead>
-
-          </thead>
-
-          <tbody>
-            <tr class="border-b border-gray-400 text-sm mt-4" v-for="(transaction, i) in transactions" :key="i">
-              <td class="py-2">
-                <img :src="transaction.imgUrl" class="h-14 w-14" alt="">
-              </td>
-              <td class="py-2">{{ transaction.subcribtion }}</td>
-              <td class="py-2">{{ transaction.date }}</td>
-              <td class="py-2">{{ transaction.doller }}</td>
-              <td class="py-2">
-                <button class="rounded py-2 px-4 text-white" :class="{'bg-blue-500 ':transaction.status=='Complate' , 'bg-red-500' :transaction.status=='Incomplate'}">
-                  {{ transaction.status }}
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
 
       </div>
     </div>
@@ -158,7 +148,7 @@ export default {
           customarId: "#0010235",
           price: "$7.5",
           quantity: "x 3",
-          status: "Pending",
+          status: "Complate",
         },
         {
           imgUrl: "/images/foods/food-3.jpg",
@@ -167,7 +157,7 @@ export default {
           customarId: "#0010235",
           price: "$7.5",
           quantity: "x 3",
-          status: "Pending",
+          status: "Delivered",
         },
         {
           imgUrl: "/images/foods/food-4.jpg",
@@ -185,33 +175,7 @@ export default {
           customarId: "#0010235",
           price: "$7.5",
           quantity: "x 3",
-          status: "Pending",
-        },
-      ],
-
-      transactions: [
-        {
-          imgUrl: "/images/foods/food-1.jpg",
-          subcribtion: "Netfelx Subcription",
-          date: "12 may 2020",
-          doller: "+$45",
-          status: "Complate",
-        },
-
-        {
-          imgUrl: "/images/foods/food-2.jpg",
-          subcribtion: "Netfelx Subcription",
-          date: "12 may 2020",
-          doller: "+$45",
-          status: "Complate",
-        },
-
-        {
-          imgUrl: "/images/foods/food-3.jpg",
-          subcribtion: "Netfelx Subcription",
-          date: "12 may 2020",
-          doller: "+$45",
-          status: "Incomplate",
+          status: "Delivered",
         },
       ],
     };
