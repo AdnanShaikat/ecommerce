@@ -51,9 +51,9 @@
 
     <!-- Recent Order -->
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 py-5">
+    <div class="flex">
 
-      <div class="p-4 bg-white">
+      <div class="p-4 w-2/3 bg-white">
         <div class="flex">
           <div>
             <p class="font-bold">Recent Order Request</p>
@@ -71,9 +71,9 @@
           </thead>
 
           <tbody>
-            <tr class="border-b text-sm border-gray-400" v-for="(orderRequest, i) in orderRequests" :key="i">
+            <tr class="text-sm border-b border-gray-400" v-for="(orderRequest, i) in orderRequests" :key="i">
               <td class="py-2">
-                <img :src="orderRequest.imgUrl" class="h-14 w-14 rounded-full" alt="">
+                <img :src="orderRequest.imgUrl" class="h-20 w-20 rounded-full" alt="">
               </td>
               <td class="py-2">{{ orderRequest.foodName }}</td>
               <td class="py-2">{{ orderRequest.customarName }}</td>
@@ -92,26 +92,26 @@
         </table>
       </div>
 
-      <!-- Prviius Transaction -->
-      <div class="p-4 bg-white">
+      <!-- Trending Menu -->
+      <div class="p-4 ml-4 w-1/3 bg-white">
         <div class="mb-5">
           <p class="font-bold">Recent Order Request</p>
           <p>Lorem Ipsum</p>
         </div>
 
-        <div class="flex items-center">
-          <div class="flex-1">
-            #1
+        <div class="flex items-center border-b border-gray-400 pb-4" v-for="(menuItem, i) in trendingMenu" :key="i">
+          <div class="text-gray-400">
+            {{ menuItem.serial }}
           </div>
-          <div class="flex flex-1 flex-col">
-            <p>Chicken curry special with cucumber</p>
+          <div class="flex ml-4 flex-col">
+            <p class="font-medium">{{ menuItem.foodName }}</p>
             <div class="flex">
-              <p>5.56</p>
-              <p class="text-text-500 ml-4">Order</p>
+              <p class="font-medium">{{ menuItem.price }}</p>
+              <p class="text-text-200 ml-4">{{ menuItem.order }}</p>
             </div>
           </div>
-          <div class="flex-1">
-            <img src="/images/foods/food-1.jpg" class="w-14 h-14 rounded-full" alt="">
+          <div class="ml-auto">
+            <img :src="menuItem.imgUrl" class="h-16 w-16 rounded-full" alt="">
           </div>
         </div>
 
@@ -176,6 +176,43 @@ export default {
           price: "$7.5",
           quantity: "x 3",
           status: "Delivered",
+        },
+      ],
+      trendingMenu: [
+        {
+          serial: "#1",
+          foodName: "Chicken curry special with cucumber",
+          price: "$5.45",
+          order: "order",
+          imgUrl: "/images/menu/menu-1.jpg",
+        },
+        {
+          serial: "#2",
+          foodName: "Waterlemon juice with ice",
+          price: "$4.45",
+          order: "order",
+          imgUrl: "/images/menu/menu-2.jpg",
+        },
+        {
+          serial: "#3",
+          foodName: "Chicken curry special with cucumber",
+          price: "$5.30",
+          order: "order",
+          imgUrl: "/images/menu/menu-3.jpg",
+        },
+        {
+          serial: "#4",
+          foodName: "Italian Pizza with qarlic",
+          price: "$4.50",
+          order: "order",
+          imgUrl: "/images/menu/menu-4.jpg",
+        },
+        {
+          serial: "#4",
+          foodName: "Tuna soup spanish with himaloya salt",
+          price: "$6.50",
+          order: "order",
+          imgUrl: "/images/menu/menu-1.jpg",
         },
       ],
     };
