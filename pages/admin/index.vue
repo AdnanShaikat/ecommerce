@@ -71,7 +71,7 @@
           </thead>
 
           <tbody>
-            <tr class="text-sm border-b border-gray-400" v-for="(orderRequest, i) in orderRequests" :key="i">
+            <tr class="border-b border-gray-400" v-for="(orderRequest, i) in orderRequests" :key="i">
               <td class="py-2">
                 <img :src="orderRequest.imgUrl" class="h-20 w-20 rounded-full" alt="">
               </td>

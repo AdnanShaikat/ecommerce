@@ -1,7 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 h1,
@@ -10,56 +11,63 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Josefin Sans", sans-serif !important;
-    margin-bottom: 0;
+  font-family: "Josefin Sans", sans-serif !important;
+  margin-bottom: 0;
 }
 
 body {
-    font-weight: 400 !important;
+  font-weight: 400 !important;
+  color: #222132;
 }
 
 .table {
-    @apply w-full divide-y divide-gray-200;
+  @apply w-full divide-y divide-gray-200;
 
-    thead {
-        @apply bg-white;
+  thead {
+    @apply bg-white;
 
-        th {
-            @apply px-6 py-5 text-left text-sm text-black uppercase font-bold;
-        }
+    th {
+      @apply px-6 py-5 text-left text-sm text-black uppercase font-bold;
     }
+  }
 
-    tbody {
-        @apply bg-white divide-y divide-gray-200;
+  tbody {
+    @apply bg-white divide-y divide-gray-200;
 
-        td {
-            @apply px-6 py-4 whitespace-nowrap;
-        }
+    td {
+      @apply px-6 py-4 whitespace-nowrap;
     }
+  }
 }
 
 .container {
-    width: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 375px) {
+    padding: 1rem;
+    // max-width: 328px;
+  }
+
+  @media (min-width: 640px) {
+    max-width: 600px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1280px) {
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    @media (min-width: 375px) {
-        padding: 1rem;
-        // max-width: 328px;
-    }
-    @media (min-width: 640px) {
-        max-width: 600px;
-    }
-    @media (min-width: 768px) {
-        max-width: 720px;
-    }
-    @media (min-width: 1024px) {
-        max-width: 960px;
-    }
-    @media (min-width: 1280px) {
-        max-width: 1200px;
-    }
-    // @media (min-width: 1536px) {
-    //     max-width: 1400px;
-    // }
+  }
+
+  // @media (min-width: 1536px) {
+  //     max-width: 1400px;
+  // }
 }

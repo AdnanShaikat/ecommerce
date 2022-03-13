@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center p-4">
+  <div class="flex items-center p-4 shadow border-b">
     <div class="w-2/3">
       <form class="example" action="/action_page.php">
         <input class="p-3 w-full rounded-full py-3 px-6 bg-gray-100" type="text" placeholder="Search.." name="search">
