@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-4">
+  <div>
     <p class="text-3xl my-4">Card Center</p>
     <div class="">
       <statment-cards />

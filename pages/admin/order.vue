@@ -1,27 +1,25 @@
 <template>
-  <div class="bg-gray-100 p-4">
+  <div>
     <p class="text-3xl text-text-500 my-4">Order</p>
-    <div class="">
-      <form class="example" action="/action_page.php">
-        <input class="p-3 rounded-full py-3 px-6 bg-white" type="text" placeholder="Search here.." name="search">
-      </form>
+    <div>
+      <Input></Input>
     </div>
-    <!-- Customer Table -->
-    <div class="bg-white mt-10 py-5">
+    <!-- Order Table -->
+    <div class="mt-10 py-5">
       <table class="w-full">
-        <thead>
-          <tr>
-            <th>Order Id</th>
-            <th>Date</th>
-            <th>Customer Name</th>
-            <th>Location</th>
-            <th>Amount</th>
-            <th>Status Order</th>
+        <thead class="pt-5">
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="py-6">Order Id</th>
+            <th class="py-6">Date</th>
+            <th class="py-6">Customer Name</th>
+            <th class="py-6">Location</th>
+            <th class="py-6">Amount</th>
+            <th class="py-6">Status Order</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr v-for="(orderItem, i) in orderList" :key="i" class="border-b border-gray-200">
+          <tr v-for="(orderItem, i) in orderList" :key="i" class="border-b border-gray-200 bg-gray-50 hover:bg-white">
             <td class="py-6 pl-10">{{ orderItem.orderId }}</td>
             <td class="py-6 pl-16">{{ orderItem.date}}</td>
             <td class="py-6 pl-10">{{ orderItem.customerName}}</td>
@@ -38,6 +36,45 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- Pagination -->
+      <div class="flex mt-5 items-center">
+        <p>Showing 1 to 8 of 8 entries</p>
+        <div class="ml-auto flex items-center">
+          <nav aria-label="Page navigation example">
+            <ul class="inline-flex items-center -space-x-px">
+              <li>
+                <a href="#" class="block py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                  <span class="sr-only">Previous</span>
+                  <ChevronDouble-Left></ChevronDouble-Left>
+                </a>
+              </li>
+              <li>
+                <nuxt-link to="#" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" aria-current="page" class="z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" class="block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                  <span class="sr-only">Next</span>
+                  <ChevronDoubleRight></ChevronDoubleRight>
+                </nuxt-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- End Pagination  -->
     </div>
 
     <!-- End Customer Table -->

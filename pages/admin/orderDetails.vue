@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-gray-100 p-4">
+  <div class="">
     <div class="flex mb-10">
       <p>#INV-0012456</p>
       <p class="ml-auto">Order/</p>
       <p>Order Details</p>
     </div>
 
-    <div class="flex">
+    <div class="flex flex-col lg:flex-row">
 
-      <div class="w-1/3">
+      <div class="lg:w-1/3 w-full">
         <!-- Customers -->
         <div class="bg-white px-6 py-8">
           <div class="flex flex-col items-center">
@@ -34,7 +34,7 @@
           <p class="font-bold mt-2">Note Order</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatem eum ipsam architecto assumenda atque quisquam quaerat aliquid similique enim!</p>
         </div>
-        <!-- End Not Order -->
+        <!-- End Note Order -->
         <!-- Delevery Guy -->
         <div class="bg-white mt-5 px-6 py-8">
           <p class="mt-4">Delivery Guy</p>
@@ -55,7 +55,7 @@
         <!-- End Delevery Guy -->
       </div>
 
-      <div class="w-2/3 ml-4">
+      <div class="lg:w-2/3 w-full mt-5 lg:mt-0 lg:ml-4">
         <!-- Order -->
         <div class="bg-white">
           <table class="w-full">

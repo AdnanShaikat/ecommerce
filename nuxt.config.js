@@ -29,7 +29,7 @@ export default {
      '~/components',
     { path: '~/components/shared', extensions: ['vue'] },
     { path: '~/components/partial', extensions: ['vue'] },
-    // { path: '~/components/form', extensions: ['vue'] },
+    { path: '~/components/form', extensions: ['vue'] },
     { path: '~/components/icons', extensions: ['vue'] },
   ],
 

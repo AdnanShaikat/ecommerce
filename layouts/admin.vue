@@ -3,7 +3,7 @@
     <AdminSidebar />
     <div class="flex-grow h-screen overflow-hidden">
       <AdminHeader />
-      <main class="main">
+      <main class="main bg-gray-100 p-4">
         <Nuxt></Nuxt>
       </main>
     </div>

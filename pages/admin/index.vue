@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-4">
+  <div>
     <p class="text-3xl mt-4 text-text-500">Dashboard</p>
     <div class="py-5">
       <statment-cards />
@@ -12,9 +12,8 @@
             <p class="font-bold">Customer Map</p>
             <p>Lorem Ipsum</p>
           </div>
-          <div class="flex items-center border px-4 ml-auto">
-            <p class="text-xs text-gray-400">This Week</p>
-            <chevron class="text-gray-400"></chevron>
+          <div class="flex items-center ml-auto">
+            <Select></Select>
           </div>
         </div>
 
@@ -59,9 +58,8 @@
             <p class="font-bold">Recent Order Request</p>
             <p>Lorem Ipsum</p>
           </div>
-          <button class="flex items-center rounded-full border py-1 px-4 ml-auto">
-            <p class="text-xs text-gray-400">Newest</p>
-            <chevron class="text-gray-400"></chevron>
+          <button class="flex ml-auto">
+            <Select></Select>
           </button>
         </div>
 

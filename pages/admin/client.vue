@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-4">
+  <div>
     <p class="text-3xl text-text-500 my-4">Client</p>
 
     <div class="grid grid-cols-2 grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-4">
