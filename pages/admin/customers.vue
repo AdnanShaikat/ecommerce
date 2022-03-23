@@ -11,30 +11,41 @@
       <table class="w-full">
         <thead class="pt-5">
           <tr class="bg-gray-50 border-b border-gray-200">
-            <th class="pl-6 py-6">
+            <th class="py-6">
               <Checkbox></Checkbox>
             </th>
-            <th class="py-6">Customer Id</th>
+            <th class="py-6">
+              <div class="flex items-center">
+                <div>
+                  <ChevronUp class=""></ChevronUp>
+                  <ChevronDown class="m-0 p-0"></ChevronDown>
+                </div>
+                <div>Customer Id</div>
+              </div>
+            </th>
             <th class="py-6">Join Date</th>
             <th class="py-6">Customer Name</th>
             <th class="py-6">Location</th>
             <th class="py-6">Total Spent</th>
             <th class="py-6">Last Order</th>
+            <th class="py-6">
+              <ChevronDown></ChevronDown>
+            </th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td class="py-6 pl-6">
+          <tr v-for="(customer, i) in customers" :key="i">
+            <td class="py-6">
               <Checkbox></Checkbox>
             </td>
-            <td class="py-6 pl-10">#0001234</td>
-            <td class="py-6 pl-10">26 March 2020, 12:42 AM</td>
-            <td class="py-6 pl-10">James WItcwicky</td>
-            <td class="py-6 pl-10">Corner Street 5th London</td>
-            <td class="py-6 pl-10">$82.46</td>
-            <td class="font-bold py-6 pl-10">$8.13</td>
-            <td class="py-6 pl-10">
+            <td class="py-6 pl-10">{{ customer.customerId }}</td>
+            <td class="py-6 pl-10">{{ customer.date }}</td>
+            <td class="py-6 pl-10">{{ customer.name }}</td>
+            <td class="py-6 pl-10">{{ customer.location }}</td>
+            <td class="py-6 pl-10">{{ customer.totalSpent }}</td>
+            <td class="font-bold py-6 pl-10">{{ customer.lastOrder }}</td>
+            <td class="py-6">
               <Dots></Dots>
             </td>
           </tr>
@@ -50,6 +61,92 @@ import Input from "~/components/form/Input.vue";
 export default {
   components: { Input },
   layout: "admin",
+  data() {
+    return {
+      customers: [
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "James WItcwicky",
+          location: "Corner Street 5th London",
+          totalSpent: "$82.46",
+          lastOrder: "$8.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "Olivia Shine",
+          location: "35 Station Road London",
+          totalSpent: "$82.46",
+          lastOrder: "$8.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "Veronica",
+          location: "21 King Street London",
+          totalSpent: "$82.46",
+          lastOrder: "$18.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "James WItcwicky",
+          location: "Corner Street 5th London",
+          totalSpent: "$82.46",
+          lastOrder: "$8.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "Emilia Johanson",
+          location: "67 St. John’s Road London",
+          totalSpent: "$82.46",
+          lastOrder: "$108.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "Jessica Wong",
+          location: "11 Church Road London",
+          totalSpent: "$62.46",
+          lastOrder: "$28.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "	David Horison",
+          location: "	981 St. John’s Road London",
+          totalSpent: "$222.46",
+          lastOrder: "$80.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "Roberto Carlo",
+          location: "	544 Manor Road London",
+          totalSpent: "$42.46",
+          lastOrder: "$328.13",
+        },
+
+        {
+          customerId: "#0001234",
+          date: "26 March 2020, 12:42 AM",
+          name: "Franky Sihotang",
+          location: "6 The Avenue London",
+          totalSpent: "$162.46",
+          lastOrder: "$280.13",
+        },
+      ],
+    };
+  },
 };
 </script>
 
