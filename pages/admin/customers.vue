@@ -11,7 +11,7 @@
       <table class="w-full">
         <thead class="pt-5">
           <tr class="bg-gray-50 border-b border-gray-200">
-            <th class="py-6">
+            <th class="py-6 pl-4">
               <Checkbox></Checkbox>
             </th>
             <th class="py-6">
@@ -35,8 +35,8 @@
         </thead>
 
         <tbody>
-          <tr v-for="(customer, i) in customers" :key="i">
-            <td class="py-6">
+          <tr v-for="(customer, i) in customers" :key="i" class="border-d border-gray-200 bg-gray-50 hover:bg-white">
+            <td class="py-6 pl-4">
               <Checkbox></Checkbox>
             </td>
             <td class="py-6 pl-10">{{ customer.customerId }}</td>
@@ -51,6 +51,33 @@
           </tr>
         </tbody>
       </table>
+      <!-- Pagination -->
+      <div class="flex mt-5 items-center">
+        <p>Showing 1 to 8 of 10 entries</p>
+        <div class="ml-auto flex items-center">
+          <nav aria-label="Page navigation example">
+            <ul class="inline-flex items-center -space-x-px">
+              <li>
+                <a href="#" class="block py-3 px-3 mr-2 hover:translate-y-3">
+                  <ChevronDouble-Left></ChevronDouble-Left>
+                </a>
+              </li>
+              <li>
+                <nuxt-link to="#" class="py-2 px-4 text-white bg-primary-500 mr-2">1</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" class="py-2 px-4 bg-gray-300">2</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="#" class="block py-3 px-3 ml-2 hover:bg-primary-500">
+                  <ChevronDoubleRight></ChevronDoubleRight>
+                </nuxt-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- End Pagination  -->
     </div>
     <!-- End Customer Table -->
   </div>

@@ -54,6 +54,11 @@ export default {
           icon: "Card",
         },
         {
+          title: "Analytics",
+          href: "/admin/analytics",
+          icon: "Transaction",
+        },
+        {
           title: "Revenue",
           href: "/admin/revenue",
           icon: "Transaction",
