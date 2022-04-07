@@ -1,11 +1,11 @@
 <template>
-  <div class="">
-    <div class="mb-5">
+  <div>
+    <div class="px-4">
       <p class="font-bold">Daily Trending Menu</p>
       <p>Lorem Ipsum</p>
     </div>
 
-    <div class="flex items-center border-b border-gray-400 pb-4" v-for="(menuItem, i) in trendingMenu" :key="i">
+    <div class="px-4 pb-3 mt-5 flex items-center border-b border-gray-100" v-for="(menuItem, i) in trendingMenu" :key="i">
       <div class="text-gray-400">
         {{ menuItem.serial }}
       </div>

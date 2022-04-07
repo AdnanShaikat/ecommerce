@@ -48,12 +48,10 @@
     </div>
     <!-- End Transaction -->
 
-    <!-- Recent Order -->
-
-    <div class="flex">
-
-      <div class="p-4 w-2/3 bg-white">
-        <div class="flex">
+    <div class="grid grid-cols-1 lg:grid-cols-3 grid-rows-1 gap-y-4 lg:gap-x-4">
+      <!-- Recent Order -->
+      <div class="col-span-2 py-4 bg-white">
+        <div class="flex px-4">
           <div>
             <p class="font-bold">Recent Order Request</p>
             <p>Lorem Ipsum</p>
@@ -62,15 +60,14 @@
             <Select></Select>
           </button>
         </div>
-
         <table class="text-left w-full border-collapse">
           <thead>
 
           </thead>
 
           <tbody>
-            <tr class="border-b border-gray-400" v-for="(orderRequest, i) in orderRequests" :key="i">
-              <td class="py-2">
+            <tr class="border-b border-gray-100" v-for="(orderRequest, i) in orderRequests" :key="i">
+              <td class="py-2 pl-4">
                 <img :src="orderRequest.imgUrl" class="h-20 w-20 rounded-full" alt="">
               </td>
               <td class="py-2">{{ orderRequest.foodName }}</td>
@@ -89,12 +86,13 @@
           </tbody>
         </table>
       </div>
+      <!-- End Recent Order -->
 
       <!-- Trending Menu -->
-      <div class="p-4 ml-4 w-1/3 bg-white">
+      <div class="py-4 lg:ml-4 bg-white">
         <TrendingMenu></TrendingMenu>
       </div>
-
+      <!-- End Trending Menu -->
     </div>
 
     <!-- End Latest Invoice -->
